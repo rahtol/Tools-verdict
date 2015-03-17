@@ -1,6 +1,7 @@
 
 public class TestcaseInfo {
 	
+	public boolean specs_dir;  // subdir "specs" exists and is not empty
 	public boolean caller_rts;
 	public boolean rttlight_log;
 	public long log_last_modified;
@@ -14,6 +15,7 @@ public class TestcaseInfo {
 	{
 		this.group = group;
 		this.number = number;
+		specs_dir = false;
 		caller_rts = false;
 		rttlight_log = false;
 		log_last_modified = 0;

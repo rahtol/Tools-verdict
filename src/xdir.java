@@ -11,7 +11,8 @@ public class xdir {
 //	final static String version = "rttlverdict v1.04, 02.08.2013";
 //	final static String version = "rttlverdict v1.05, 30.08.2013";
 //	final static String version = "rttlverdict v1.06, 25.02.2014";
-	final static String version = "rttlverdict v1.07, 25.11.2014";
+//	final static String version = "rttlverdict v1.07, 25.11.2014";
+	final static String version = "rttlverdict v1.08, 23.02.2015";
 	
 	/**
 	 * @param args
@@ -70,6 +71,11 @@ public class xdir {
 			} else {
 				System.err.println(key);  // just to indicate progress on console
 				v = new TestcaseInfo(group, number);
+			}
+			
+			if (fname.startsWith("specs\\"))
+			{
+				v.specs_dir = true;
 			}
 			
 			if (fname.equals("specs\\caller.rts") || fname.equals("specs\\" +number + ".rts"))
@@ -170,6 +176,8 @@ public class xdir {
 		for (String s : testcases.keySet())
 		{
 			TestcaseInfo v = testcases.get(s);
+			
+			if (!v.specs_dir) continue;
 			
 			total +=1;
 			boolean success = v.caller_rts && v.rttlight_log && v.log_parse_result && v.log_result; 
