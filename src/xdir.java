@@ -12,7 +12,8 @@ public class xdir {
 //	final static String version = "rttlverdict v1.05, 30.08.2013";
 //	final static String version = "rttlverdict v1.06, 25.02.2014";
 //	final static String version = "rttlverdict v1.07, 25.11.2014";
-	final static String version = "rttlverdict v1.08, 23.02.2015";
+//	final static String version = "rttlverdict v1.08, 23.02.2015";
+	final static String version = "rttlverdict v1.09, 04.08.2015";
 	
 	/**
 	 * @param args
@@ -78,7 +79,7 @@ public class xdir {
 				v.specs_dir = true;
 			}
 			
-			if (fname.equals("specs\\caller.rts") || fname.equals("specs\\" +number + ".rts"))
+			if (fname.equals("specs\\caller.rts") || fname.toLowerCase().equals("specs\\" + number.toLowerCase() + ".rts"))
 			{
 				v.caller_rts = true;
 			}
